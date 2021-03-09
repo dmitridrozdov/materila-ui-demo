@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     dashboard: {
         fontFamily: 'Roboto Slab',
     },
+    dashboardContent: {
+        fontFamily: 'Quicksand',
+    },
 }))
 
 export default useStyles
