@@ -12,14 +12,17 @@ const services = [
     {
         name: 'Progression tool',
         image: progressionImage,
+        link: '/progression',
     },
     {
         name: 'Cloudera upgrade',
         image: clouderaImage,
+        link: '/cloudera',
     },
     {
         name: 'AWB Regression tests',
         image: awbImage,
+        link: '/awb',
     }
 ]
 
@@ -42,7 +45,7 @@ const HomePage = () => {
                     <Grid container spacing={4}>
                         {services.map((service) => (
                             <Grid item xs={12} sm={6} md={4}>
-                                <Link to={'/awb'} style={{ textDecoration: 'none' }}>
+                                <Link to={service.link} style={{ textDecoration: 'none' }}>
                                     <Card className={classes.card}>
                                         <CardMedia 
                                             className={classes.cardMedia}
