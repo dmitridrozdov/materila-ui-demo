@@ -33,7 +33,7 @@ const HomePage = () => {
             <CssBaseline />
             <AppBar position='relative' className={classes.header}>
                 <Toolbar>
-                    <Avatar alt="" src={cbaAvatar} className={classes.large} />
+                    <Avatar alt="" src={cbaAvatar} />
                     <Typography variant='h6' className={classes.headerText}>
                         CDO Quality Engineering Services
                     </Typography>
