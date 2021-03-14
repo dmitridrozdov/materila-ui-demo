@@ -1,41 +1,76 @@
-import React from 'react'
-import { Grid, Typography, Paper } from '@material-ui/core'
+import React, { useState } from 'react';
+
+import { AppBar, Avatar, Drawer, CssBaseline, Toolbar, List, Typography, Divider, ListItem, ListItemIcon, ListItemText, Link } from '@material-ui/core'
+
+import BlurOnIcon from '@material-ui/icons/BlurOn'
+import AppleIcon from '@material-ui/icons/Apple'
 import useStyles from './styles'
+import cbaAvatar from '../images/cba.png'
 import LineGraph from './LineGraph'
 
+
 const Awb = () => {
-    const classes = useStyles()
-    return (
-        <>
-        <Grid container className={classes.root} spacing={2}>
-            <Grid item xs={12} >
-                <Grid container justify="center" spacing={2} className={classes.firstItem}>
-                    <Grid item xs={2}>
-                        <Paper className={classes.paper}> 
-                        <Typography gutterBottom variant='h5' className={classes.menu}>
-                            Results
-                        </Typography>
-                        <Typography gutterBottom variant='h5' className={classes.menu}>
-                            Logs
-                        </Typography>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={10}>
-                        <Paper className={classes.paper}>
-                        <Typography gutterBottom  className={classes.content}>
-                            super a lot of information super a lot of informationsuper a lot of informationsuper a lot of informationsuper a lot of informationsuper a lot of information
-                            super a lot of information
-                            super a lot of informationsuper a lot of informationsuper a lot of informationsuper a lot of informationsuper a lot of information
-                            super a lot of informationsuper a lot of informationsuper a lot of information
-                        </Typography>
-                        <LineGraph />
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </Grid>
-        </>
-    )
+  const classes = useStyles();
+  const [section, setSection] = useState('Dashboard')
+
+  const onItemClick = section => () => {
+    setSection(section)
+  }
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar position='fixed' className={classes.appBar}>
+        <Toolbar>
+          <Avatar alt='' src={cbaAvatar} />
+          <Typography variant='h6' className={classes.appBarText}>
+            <Link href='/' style={{ textDecoration: 'none', color: 'black' }}>CDO Quality Engineering Services </Link> | AWB
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <Toolbar />
+        <div className={classes.drawerContainer}>
+          <List className={classes.list}>
+            <Divider />
+            <ListItem button onClick={onItemClick('Dashboard')}>
+              <ListItemIcon> <BlurOnIcon /></ListItemIcon>
+                <ListItemText
+                  disableTypography
+                  primary={<Typography className={classes.listItemName}>Dashboard</Typography>}
+                />
+            </ListItem>
+            <Divider />
+            <ListItem button onClick={onItemClick('1')}>
+              <ListItemIcon> <AppleIcon /></ListItemIcon>
+              <ListItemText
+                  disableTypography
+                  primary={<Typography className={classes.listItemName}>Calculations</Typography>}
+                />
+            </ListItem>
+            <Divider />
+          </List>
+      
+        </div>
+      </Drawer>
+      <main className={classes.content}>
+        <Toolbar />
+        <Typography paragraph>
+        {section === 'Dashboard' ? 
+          ''
+        : 
+        <LineGraph />}
+        </Typography>
+      </main>
+    </div>
+  );
 }
 
 export default Awb
+
