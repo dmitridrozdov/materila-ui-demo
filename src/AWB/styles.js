@@ -1,31 +1,44 @@
 import { makeStyles } from '@material-ui/core/styles'
 
+const drawerWidth = 240;
+
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-     
-      },
-    //   root: {
-    //     backgroundColor: 'yellow',
-    //     display: 'flex',
-    //     height: '100%',
-    //     overflow: 'hidden',
-    //     width: '100%'
-    //   },
-    paper: {
-        padding: theme.spacing(2),
-        backgroundColor: 'white',
-        height: '100%',
-        // boxShadow: 'none',
-        borderLeft: '1',
+      display: 'flex',
     },
-    menu: {
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+      backgroundColor: theme.palette.background.paper,
+      color: 'black',
+      padding: '10px 0',
+    },
+    appBarText: {
         fontFamily: 'Roboto Slab',
+        marginLeft: '20px',
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    drawerContainer: {
+      overflow: 'auto',
     },
     content: {
-        fontFamily: 'Quicksand',
+      flexGrow: 1,
+      padding: theme.spacing(3),
+      marginTop: '20px',
+
     },
+    list: {
+        marginTop: '20px',
+    },
+    listItemName: {
+        fontFamily: 'Montserrat', 
+        fontWeight: 'bold',
+    },
+  }))
 
-}))
-
-export default useStyles
+  export default useStyles
