@@ -14,10 +14,6 @@ export default function Progression() {
   const classes = useStyles();
   const [section, setSection] = useState('Home')
 
-  // const onItemClick = (section) => {
-  //   setSection(section)
-  // }
-
   const onItemClick = section => () => {
     setSection(section)
   }
