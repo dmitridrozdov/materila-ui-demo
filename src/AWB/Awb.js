@@ -17,6 +17,25 @@ const Awb = () => {
     setSection(section)
   }
 
+  const menuList = [
+    {
+      name: 'Dashboard',
+      icon: <BlurOnIcon />,
+    },
+    {
+      name: 'DS.swoop Regression',
+      icon: <AppleIcon />,
+    },
+    {
+      name: 'Scooring pipeline Regression',
+      icon: <AppleIcon />,
+    },
+    {
+      name: 'AQDQ Regression',
+      icon: <AppleIcon />,
+    },
+  ]
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -39,22 +58,18 @@ const Awb = () => {
         <div className={classes.drawerContainer}>
           <List className={classes.list}>
             <Divider />
-            <ListItem button onClick={onItemClick('Dashboard')}>
-              <ListItemIcon> <BlurOnIcon /></ListItemIcon>
-                <ListItemText
-                  disableTypography
-                  primary={<Typography className={classes.listItemName}>Dashboard</Typography>}
-                />
-            </ListItem>
-            <Divider />
-            <ListItem button onClick={onItemClick('1')}>
-              <ListItemIcon> <AppleIcon /></ListItemIcon>
-              <ListItemText
-                  disableTypography
-                  primary={<Typography className={classes.listItemName}>Calculations</Typography>}
-                />
-            </ListItem>
-            <Divider />
+            {menuList.map((menuItem) => (
+              <>
+                <ListItem button onClick={onItemClick(menuItem.name)} selected={menuItem.name === section}>
+                  <ListItemIcon> {menuItem.icon} </ListItemIcon>
+                  <ListItemText
+                    disableTypography
+                    primary={<Typography className={classes.listItemName}>{menuItem.name}</Typography>}
+                  />
+                </ListItem>
+                <Divider />
+              </>
+            ))}
           </List>
       
         </div>
@@ -62,10 +77,12 @@ const Awb = () => {
       <main className={classes.content}>
         <Toolbar />
         <Typography paragraph>
-        {section === 'Dashboard' ? 
-          ''
-        : 
-        <LineGraph />}
+        {
+          {
+            'Dashboard': <LineGraph />,
+            'Scooring pipeline Regression': <LineGraph />,
+          }[section]
+        }
         </Typography>
       </main>
     </div>
