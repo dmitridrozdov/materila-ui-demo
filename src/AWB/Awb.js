@@ -13,7 +13,11 @@ const Awb = () => {
   const classes = useStyles();
   const [section, setSection] = useState('Dashboard')
 
-  const onItemClick = section => () => {
+  // const onItemClick = section => () => {
+  //   setSection(section)
+  // }
+
+  const onItemClick = (section) => {
     setSection(section)
   }
 
@@ -60,7 +64,7 @@ const Awb = () => {
             <Divider />
             {menuList.map((menuItem) => (
               <>
-                <ListItem button onClick={onItemClick(menuItem.name)} selected={menuItem.name === section}>
+                <ListItem button onClick={() => onItemClick(menuItem.name)} selected={menuItem.name === section}>
                   <ListItemIcon> {menuItem.icon} </ListItemIcon>
                   <ListItemText
                     disableTypography
