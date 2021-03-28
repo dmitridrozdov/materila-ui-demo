@@ -1,0 +1,49 @@
+{
+  "awb-ds-swoop": [
+    {
+      "section": "1. Hydro -  Spark Regression Test - Data Load",
+      "subsections": [
+        {
+          "subsection": "1.1. Hydro - Spark Regression Test - Stats Comparison",
+          "status": "pass",
+          "logs": ""
+        },
+        {
+          "subsection": "1.2. Hydro - Spark Regression Test - Actual vs Expected (Summary)",
+          "status": "fail",
+          "logs": "fail logs"
+        }
+      ]
+    },
+    {
+      "section": "2. Casserole Model - Spark Regression Test - Data Load",
+      "subsections": [
+        {
+          "subsection": "2.1",
+          "status": "pass",
+          "logs": ""
+        },
+        {
+          "subsection": "2.2",
+          "status": "fail",
+          "logs": "fail logs"
+        }
+      ]
+    },
+    {
+      "section": "3. Bell Business Model - Spark Regression Testing - Data Load",
+      "subsections": [
+        {
+          "subsection": "3.1",
+          "status": "pass",
+          "logs": ""
+        },
+        {
+          "subsection": "3.2",
+          "status": "fail",
+          "logs": "fail logs"
+        }
+      ]
+    }
+  ]
+}
