@@ -28,21 +28,7 @@ const state = {
 
 const LineGraph = () => {
     return (
-        <div>
-        {/* <Pie
-          data={state}
-          options={{
-            title:{
-              display:true,
-              text:'Average Rainfall per month',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
-        /> */}
+        <>
 
         <Doughnut
           data={state}
@@ -58,7 +44,7 @@ const LineGraph = () => {
             }
           }}
         />
-      </div>
+      </>
     )
 }
 
