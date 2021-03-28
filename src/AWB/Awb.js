@@ -7,15 +7,12 @@ import AppleIcon from '@material-ui/icons/Apple'
 import useStyles from './styles'
 import cbaAvatar from '../images/cba.png'
 import LineGraph from './LineGraph'
+import DSSwoop from './DSSwoop'
 
 
 const Awb = () => {
   const classes = useStyles();
   const [section, setSection] = useState('Dashboard')
-
-  // const onItemClick = section => () => {
-  //   setSection(section)
-  // }
 
   const onItemClick = (section) => {
     setSection(section)
@@ -63,8 +60,8 @@ const Awb = () => {
           <List className={classes.list}>
             <Divider />
             {menuList.map((menuItem) => (
-              <>
-                <ListItem button onClick={() => onItemClick(menuItem.name)} selected={menuItem.name === section}>
+              <div key={menuItem.name}>
+                <ListItem  button onClick={() => onItemClick(menuItem.name)} selected={menuItem.name === section}>
                   <ListItemIcon> {menuItem.icon} </ListItemIcon>
                   <ListItemText
                     disableTypography
@@ -72,7 +69,7 @@ const Awb = () => {
                   />
                 </ListItem>
                 <Divider />
-              </>
+              </div>
             ))}
           </List>
       
@@ -80,14 +77,13 @@ const Awb = () => {
       </Drawer>
       <main className={classes.content}>
         <Toolbar />
-        <Typography paragraph>
         {
           {
             'Dashboard': <LineGraph />,
+            'DS.swoop Regression': <DSSwoop />,
             'Scooring pipeline Regression': <LineGraph />,
           }[section]
         }
-        </Typography>
       </main>
     </div>
   );
