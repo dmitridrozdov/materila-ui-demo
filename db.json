@@ -6,12 +6,12 @@
         {
           "subsection": "1.1. Hydro - Spark Regression Test - Stats Comparison",
           "status": "pass",
-          "logs": ""
+          "logs": "pass logs"
         },
         {
           "subsection": "1.2. Hydro - Spark Regression Test - Actual vs Expected (Summary)",
           "status": "fail",
-          "logs": "fail logs"
+          "logs": "org.apache.spark.sql.AnalysisException: Path does not exist: hdfs://nameservice1/user/drozdodm/attribute-name-mapping.psv; at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$14.apply(DataSource.scala:382) at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$14.apply(DataSource.scala:370) at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) at scala.collection.immutable.List.foreach(List.scala:381) at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241) at scala.collection.immutable.List.flatMap(List.scala:344) at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:370) at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:152) at org.apache.spark.sql.DataFrameReader.csv(DataFrameReader.scala:415) at readDf(<console>:33) ... 54 elided"
         }
       ]
     },
