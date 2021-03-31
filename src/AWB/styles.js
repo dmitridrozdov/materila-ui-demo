@@ -36,8 +36,26 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '20px',
     },
     listItemName: {
-        fontFamily: 'Montserrat', 
-        fontWeight: 'bold',
+        fontFamily: 'Arsenal', 
+    },
+    sectionName: {
+      fontFamily: 'Roboto Slab',
+      fontSize: '16px',
+    },
+    sectionCard: {
+      marginBottom: '10px',
+    },
+    testName: {
+      fontFamily: 'Arsenal',
+      fontSize: '16px',
+      marginLeft: '10px'
+    },
+    logs: {
+      fontFamily: 'BioRhyme',
+      fontSize: '12px',
+    },
+    statusIcon: {
+      left: '0px',
     },
   }))
 
