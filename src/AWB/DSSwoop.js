@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import SectionCard from './SectionCard'
 
 const DSSwoop = () => {
     const [sections, setSections] = useState([])
@@ -19,9 +20,9 @@ const DSSwoop = () => {
 
     return (
         <>
-            {sections.map((section) => 
+            {sections.map(section => 
                 <div key={section.section}>
-                    {section.section}
+                    <SectionCard sectionName={section.section} subSections={section.subsections}/>
                 </div>
             )}
         </>
