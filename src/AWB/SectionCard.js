@@ -23,7 +23,6 @@ const SectionCard = ({ sectionName, subSections }) => {
                 <Expand open={expandState}>
                     <Typography className={classes.serviceContent}>
                         {subSections.map(subsection => <TestCard subsection={subsection} /> )}
-                        
                     </Typography>
                 </Expand>
             </CardContent>
